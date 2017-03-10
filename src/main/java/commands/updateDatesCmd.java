@@ -51,7 +51,7 @@ public class updateDatesCmd implements Command {
 				return;
 
 			System.out.println(
-					"Der Hauptplan muss fuer den angemeldeten Benutzer freigegeben sein, \n oder im Blaetter-Ordner auf oberster Ebene des angemeldeten Benutzers liegen.");
+					"Der Hauptplan muss fuer den angemeldeten Benutzer freigegeben sein, \n und im Blaetter-Ordner auf oberster Ebene des angemeldeten Benutzers liegen.");
 			System.out.println("Bitte geben Sie den Namen der Hauptplan-Vorlage an!");
 
 			_sheetWorker.loadSheetFromHome(InputValidator.getInstance().handleStringInput());
@@ -106,7 +106,7 @@ public class updateDatesCmd implements Command {
 
 			System.out.println("Gab es eine Vorveranstaltung? (Kuerzel VorVG)");
 			if (InputValidator.getInstance().handleBooleanInput()) {
-				System.out.println("Bitte geben Sie den LETZTEN Veranstaltungstag der Vorveranstaltung an!");
+				System.out.println("Bitte geben Sie den 1. Veranstaltungstag der Vorveranstaltung an!");
 				vgVorVG = InputValidator.getInstance().handleDateInputRegex();
 			}
 
@@ -165,6 +165,7 @@ public class updateDatesCmd implements Command {
 				// Turnus
 				bezug = _sheetWorker.getCell(i, _sheetWorker.getColumn("Bezug " + vgTurnus + "J").getIndex()).getValue()
 						.toString();
+				System.out.println("Tag: bezug");
 				// Kalkuliere Anfangsdatum
 				if (bezug.equals("VorVg")) {
 
@@ -194,7 +195,7 @@ public class updateDatesCmd implements Command {
 		}
 
 		System.out.println("Uebertrage Aenderungen in den Plan... Kann einen Moment dauern!");
-		_sheetWorker.exexuteUpdate();
+		 _sheetWorker.exexuteUpdate();
 
 		System.out.println("");
 		System.out.println("Daten wurden erfolgreich aktualisiert!");

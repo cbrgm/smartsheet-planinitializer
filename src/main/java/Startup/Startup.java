@@ -19,7 +19,6 @@ public class Startup {
 			CommandInvoker handler = new CommandInvoker();
 			handler.setUpdateDatesCmd(new updateDatesCmd(worker));
 			handler.updateDates();
-			//Test
 
 		} catch (Exception e) {
 			e.printStackTrace();
