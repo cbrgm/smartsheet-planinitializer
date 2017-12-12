@@ -1,5 +1,6 @@
 package commands;
 
+import com.smartsheet.api.internal.util.Util;
 import com.smartsheet.api.models.Cell;
 import com.smartsheet.api.models.Sheet;
 
@@ -195,7 +196,7 @@ public class updateDatesCmd implements Command {
 		}
 
 		System.out.println("Uebertrage Aenderungen in den Plan... Kann einen Moment dauern!");
-		 _sheetWorker.exexuteUpdate();
+		_sheetWorker.exexuteUpdate();
 
 		System.out.println("");
 		System.out.println("Daten wurden erfolgreich aktualisiert!");
@@ -225,6 +226,14 @@ public class updateDatesCmd implements Command {
 				.getValue();
 
 		// Berechne neues Datum
+		try {
+			Util.throwIfNull(delta);
+			Util.throwIfEmpty(vgDate);
+		} catch (Exception e) {
+			throw new IllegalArgumentException("Fehler in Zeile " + (row + 1)
+					+ ": Datum oder Delta ist leer! Bitte ergänzen Sie die Angaben im Hauptplan");
+		}
+
 		String dateToSet = _dateCalculator.calculateDate(vgDate, delta);
 
 		// Fuege Aenderung in Update-Queue ein.
