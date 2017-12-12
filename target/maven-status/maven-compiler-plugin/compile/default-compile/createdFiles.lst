@@ -1,6 +1,8 @@
 commands/Command.class
 util/DateCalculator.class
 util/Util.class
+commands/updateDatesCmd.class
+Startup/CommandInvoker.class
+Startup/Startup.class
 util/InputValidator.class
 util/SheetWorker.class
-Startup/CommandInvoker.class

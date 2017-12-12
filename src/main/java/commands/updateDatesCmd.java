@@ -38,7 +38,7 @@ public class updateDatesCmd implements Command {
 
 		try {
 			this.clearParameters();
-			System.out.println("HMC-SMARTSHEET, PMT-PLANINITIALISIERER 1.0");
+			System.out.println("HMC-SMARTSHEET, PMT-PLANINITIALISIERER 1.1");
 			System.out.println("Autor: Christian Bargmann, 2017-03-08 http://github.com/cbrgm/");
 			System.out.println("");
 			System.out.println("Benutze die API-Schnittstelle von Account: "

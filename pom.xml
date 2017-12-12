@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bargmann.smartsheet</groupId>
 	<artifactId>PlanInitializer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.1</version>
 	<name>PlanInitializer for Smartsheet</name>
 
 	<dependencies>
@@ -24,6 +24,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
+							<addClasspath>true</addClasspath>
 							<mainClass>Startup.Startup</mainClass>
 						</manifest>
 					</archive>
